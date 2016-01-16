@@ -1,0 +1,543 @@
+/*
+Copyright (C) 2015 AHRealty Advisors
+Designed by Kiyoto Kirkpatrick http://kiyoto.me
+*/
+@font-face {
+	font-family: 'AmerikaSans';
+	src: url('../fonts/amerikasans.eot') format('embedded-opentype'),
+	url('../fonts/amerikasans.svg') format('svg'),
+	url('../fonts/amerikasans.ttf') format('truetype'),
+	url('../fonts/amerikasans.woff') format('woff');
+}
+
+
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+:focus {
+    outline: medium none;
+}
+
+a {
+    text-decoration: none;
+    transition: all 200ms ease-out 0s;
+}
+
+ol, ul {
+    list-style: none outside none;
+}
+
+p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    line-height: 22px;
+}
+
+body {
+	background-color:white;
+}
+
+#page {
+	background-color:rgb(253, 107, 7);
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	width: 85%;
+}
+
+#iconLink {
+	float: left;
+	height: 113px;
+}
+
+.greenTitle {
+    font-family: AmerikaSans;
+    color: #61C800;
+	text-shadow: 1px 2px 3px #FFF, 0px 0px 0px #000;
+}
+.orangeTitle {
+    font-family: AmerikaSans;
+    color: rgb(253, 107, 7);
+	text-shadow: 1px 2px 3px #FFF, 0px 0px 0px #000;
+}
+.centered {
+	text-align: center;
+}
+
+footer {
+	padding: 15px;
+	background: url(../images/footer-hr.jpg) no-repeat scroll 0% 0% transparent;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #FD6B07;
+  border-color: #E46006;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #E46006;
+  border-color: #CA5606;
+}
+
+.row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.bordered
+{
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.bordered:before, .bordered:after
+{
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:50%;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+.bordered:after
+{
+  right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
+}
+
+.borderedSorts {
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #999;
+}
+
+.searchHolder {
+	padding: 0 0 10px;
+}
+
+
+
+/* Add a margin to the top to account for the navbar */
+.mainInfo {
+  margin-top: 100px;
+}
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Set the logo smaller by default so it's not huge before the script hooks */
+#logoLink {
+	height: 65px;
+}
+
+@media (min-width: 768px) {
+	.container {
+		width: 100%;
+	}
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #61C800;
+  text-decoration: none;
+  background-color: #E6E6E6;
+}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    background-color: #FD6B07;
+}
+.navbar-inverse {
+  background-color: #FFF;
+  border-radius: 0px !important;
+}
+.navbar-inverse .navbar-nav > li {
+	float: left;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.navbar-inverse .navbar-nav > li:hover {
+	background-color: #E6E6E6;
+}
+.navbar-inverse .navbar-nav > li > a {
+  line-height: 20px;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  color: #999;
+}
+@ media (min-width: 768px) {
+	.navbar-inverse .navbar-nav > li > a {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #61C800;
+  background-color: transparent;
+  text-decoration: none;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #FFF;
+  background-color: rgb(253, 107, 7);
+  text-decoration: none;
+}
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  color: #fff;
+  background-color: #FD6B07;
+  text-decoration: none;
+}
+.navbar-inverse .navbar-toggle {
+  border-color: #DDD;
+}
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  background-color: #DDD;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+div.navbar-collapse > ul.navbar-nav {
+	display: inline-block;
+	position: relative;
+	height: auto;
+	float: right;
+	font-weight: bold;
+  	margin: 20px 0 0 0;
+
+}
+.navbar-brand {
+	height: auto;
+	padding-top: 0px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+.navbar > .container {
+	height: 100%;
+}
+.navbar-collapse {
+	height: 100%;
+}
+
+#inputSearch {
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.scrollable-area {
+	position: absolute;
+	clear: left;
+	display: none;
+	right: 0px;
+	overflow: auto;
+    min-width: 300px;
+	max-width: 750px;
+	min-height: 150px;
+	max-height: 500px;
+	background-color: #FFF;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.176);
+}
+
+.results {
+    position: relative;
+    display: inline-block;
+    max-width: 96%;
+	max-height: 100%;
+    font-size: 14px;
+    list-style: none outside none;
+    background-color: transparent;
+	padding: 0;
+	margin: 0;
+}
+.results a {
+	background-color: #FFF;
+}
+.results a:hover,
+.results a:focus {
+	background-color: #DDD;
+}
+
+/* Property Listing Links */
+.resultLink {
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+	float: right;
+	padding: 10px 10px 30px;
+	width: 300px;
+	margin-bottom:15px;
+	position:relative;
+	display:inline-block;
+	text-decoration:none;
+}
+.resultLink > h3 {
+	color: #4B9B00;
+	font-family: AmerikaSans !important;
+	font-size: 14px;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+.resultLink > .resultDiv1 {
+	float:left;
+	width:60px;
+}
+.resultLink > .resultDiv2 {
+	float:none;
+	margin-left:65px;
+}
+.resultLink > .resultDiv2 > .resultDiv2-1 {
+	font-style:italic;
+	color:#999999;
+}
+.resultLink > .resultDiv2 > .resultDiv2-2 {
+	font-weight:bold;
+	font-size:12px;
+}
+.resultLink > .resultDiv2 > .resultDiv2-3 {
+	color:#555555;
+	font-size:12px;
+}
+.resultLink > .resultDiv2 > .resultDiv2-4 {
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	border-radius:5px;
+	background:none repeat scroll 0 0 #FD6B07 !important;
+	padding:3px 8px;
+	color:#ffffff;
+}
+
+
+
+
+/* CUSTOMIZE THE PROPERTIES PAGE LISTINGS
+-------------------------------------------------- */
+
+/* Sort By Buttons */
+
+#sortBy > li {
+	width: 150px;
+	margin-top: auto;
+	margin-bottom: auto;
+	list-style: none outside;
+	font-size: 14px;
+	font-weight: bold;
+	display: inline-block;
+}
+#sortBy > li:hover {
+	background-color: #E6E6E6;
+}
+#sortBy > li > a {
+  line-height: 20px;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  color: #999;
+}
+#sortBy > li > a:hover,
+#sortBy > li > a:focus {
+  color: #61C800;
+  background-color: transparent;
+  text-decoration: none;
+}
+#sortBy > .active > a,
+#sortBy > .active > a:hover,
+#sortBy > .active > a:focus {
+  color: #FFF;
+  background-color: rgb(253, 107, 7);
+  text-decoration: none;
+}
+
+#inputSearchProperties {
+	width: 400px;
+    padding: 5px 5px 5px 5px;
+    font-size: 20px;
+	font-weight: bold;
+    border-radius: 5px;
+	box-shadow: 5px 5px 5px #999;
+	border-color: #999;
+	color: #666;
+}
+
+
+.resultsHolder {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.resultsProperties {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+	max-height: 100%;
+    font-size: 14px;
+    list-style: none outside none;
+    background-color: transparent;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+.resultsProperties a {
+	background-color: #FFF;
+	display: inline-block;
+	text-align: center;
+}
+.resultsProperties a:hover,
+.resultsProperties a:focus {
+	background-color: #DDD;
+}
+
+
+
+/* Property Listing Links */
+.resultDivProperties {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.resultLinkProperties {
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+	float: left;
+	padding: 10px 15px 15px;
+	width: 300px;
+	height: 160px;
+	margin-bottom:15px;
+	margin-right: 15px;
+	position:relative;
+	display:inline-block;
+	text-decoration:none;
+}
+.resultLinkProperties > h3 {
+	color: #4B9B00;
+	font-family: AmerikaSans !important;
+	font-size: 14px;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+.resultLinkProperties > .resultDiv1 {
+	float:left;
+	width:60px;
+}
+.resultLinkProperties > .resultDiv2 {
+	float:none;
+	margin-left:65px;
+}
+.resultLinkProperties > .resultDiv2 > .resultDiv2-1 {
+	font-style:italic;
+	color:#999999;
+}
+.resultLinkProperties > .resultDiv2 > .resultDiv2-2 {
+	font-weight:bold;
+	font-size:12px;
+}
+.resultLinkProperties > .resultDiv2 > .resultDiv2-3 {
+	color:#555555;
+	font-size:12px;
+}
+.resultLinkProperties > .resultDiv2 > .resultDiv2-4 {
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	border-radius:5px;
+	background:none repeat scroll 0 0 #FD6B07 !important;
+	padding:3px 8px;
+	color:#ffffff;
+}
+
+
+
+
+
+/* CUSTOMIZE THE SCROLLPANE
+-------------------------------------------------- */
+.jspVerticalBar {
+    width: 9px;
+    background: transparent;
+    right:5px;
+}
+
+.jspHorizontalBar {
+    bottom: 5px;
+    width: 100%;
+    height: 9px;
+    background: transparent;
+}
+.jspTrack {
+    background: transparent;
+}
+
+.jspDrag {
+    background-color: #FD6B07;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+}
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag {
+    float: left;
+    height: 100%;
+}
+
+.jspCorner {
+    display:none
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+  margin-top: 50px;
+}
+.carousel-inner > .item > img {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  min-width: 100%;
+  max-width: none;
+  min-height: 500px;
+  height: auto;
+  vertical-align: middle;
+}
+.carousel-control:hover{
+  color: #fff;
+  text-decoration: none;
+  filter: alpha(opacity=90);
+  outline: none;
+  opacity: .9;
+}
+.carousel-control:focus{
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+}
